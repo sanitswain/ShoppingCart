@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped" 
+        style="width: 40%; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%);">
+    <tr>
+        <th>Total Amount</th> 
+        <td>{{getTotal()}}</td>
+    </tr>
+    <tr>
+        <th>Payment Mode</th> 
+        <td>COD</td>
+    </tr>
+    <tr>
+        <td> Place your order? </td>
+        <td>
+            <button class="btn btn-xs btn-primary" (click)="confirmCheckout()">Yes</button>
+            <button class="btn btn-xs btn-danger" (click)="continueShopping()">No</button>
+        </td>
+    </tr>
+</table>
