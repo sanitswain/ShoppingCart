@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a href="#" class="navbar-brand">{{cmpHeading}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/shopping">Shopping</a></li>
+        <li><a routerLink="/manage">Manage Products</a></li>
+    </ul>
+    <div style="text-align:right; margin-right:30px;">
+        <span *ngIf="uname == null">
+            <a href="javascript:void(0)" routerLink="/login">Login</a>
+        </span>
+        <span style="font-weight: bold;font-style: italic;color: orange;font-size: 17px;"
+            *ngIf="uname != null">Hello {{uname}}</span>
+        <button class="btn btn-xs btn-danger" *ngIf="uname != null" (click)="onLogout()">X</button>
+    </div>
+</nav>

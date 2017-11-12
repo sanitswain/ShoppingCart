@@ -1,0 +1,22 @@
+<h3>Products inside store</h3>
+<table class="table table-boardered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+        <td> <a [routerLink]="['/details', product.id]">{{product.pname}}</a> </td>
+        <td>{{product.price}}</td>
+        <td>
+            <button class="btn btn-xs btn-primary" (click)='addToCart(product)'>Add to cart</button>
+        </td>
+    </tr>
+
+    <tr *ngIf="products.length == 0">
+        <td colspan="3" style="text-align: center;">No products available</td>
+    </tr>
+    
+    
+</table>

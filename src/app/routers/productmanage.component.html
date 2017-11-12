@@ -1,0 +1,36 @@
+<div>
+    <h3>Manage Products</h3>
+
+    <table class="table table-bordered table-striped" style="width:70%">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th colspan="2">Price</th>
+        </tr>
+
+        <!-- For adding or updating product -->
+        <tr>
+            <td> <input name="pid" [(ngModel)]="formProduct.id" readonly> </td>
+            <td> <input name="pname" [(ngModel)]="formProduct.pname"> </td>
+            <td> <input name="description" [(ngModel)]="formProduct.description"> </td>
+            <td> <input name="price" type="number" [(ngModel)]="formProduct.price"> </td>
+            <td> <button class="btn btn-xs btn-primary" (click)="saveProduct()">Save</button> </td>
+        </tr>
+
+        <tr *ngFor="let product of products; let idx=index">
+            <td>{{product.id}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="invokeEdit(product)">Edit</button>
+                <button class="btn btn-xs btn-danger" (click)="removeProduct(product.id, idx)">X</button>
+            </td>
+        </tr>
+
+        <tr *ngIf="products.length < 1">
+            <td colspan="5" style="text-align:center;">Store is Empty</td>
+        </tr>
+    </table>
+</div>
