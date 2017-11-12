@@ -26,4 +26,10 @@ export class CartService {
         this.cartItems.splice(position, 1);
     }
 
+    getTotal():number{
+        let sum = 0;
+        this.cartItems.map(item=>item.product.price * item.qty).forEach(cost=>sum += cost);
+        return sum;
+    }
+
 }

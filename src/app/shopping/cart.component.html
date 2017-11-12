@@ -26,3 +26,6 @@
         <td colspan="4" style="text-align: center;">You haven't started shopping</td>
     </tr>
 </table>
+
+<a *ngIf="cartItems.length > 0" href="javascript:void(0);" style="font-weight: bolder"
+    routerLink="/confirmcheckout">Proceed to checkout?</a>

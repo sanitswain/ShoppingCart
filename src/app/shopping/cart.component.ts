@@ -15,9 +15,7 @@ export class CartComponent{
     }
 
     getTotal():number{
-        let sum = 0;
-        this.cartItems.map(item=>item.product.price * item.qty).forEach(cost=>sum += cost);
-        return sum;
+        return this.cs.getTotal();
     }
 
     removeItem(idx:number):void{

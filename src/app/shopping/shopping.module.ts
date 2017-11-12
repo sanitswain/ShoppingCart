@@ -10,15 +10,22 @@ import {CartService} from '../service/cart.service'
 import {ProductListComponent} from './productlist.component';
 import {CartComponent} from './cart.component';
 import {ProductDetailsComponent} from './productdetails.component';
+import {CheckoutConfirmation} from './confirmcheckut.component';
+import {InvoiceComponent} from './invoice.component';
 
 @NgModule({
-    declarations: [ProductListComponent, CartComponent, ProductDetailsComponent],
+    declarations: [
+        ProductListComponent, CartComponent, ProductDetailsComponent, 
+        CheckoutConfirmation, InvoiceComponent
+    ],
     exports: [ProductListComponent, CartComponent],
     providers: [CartService, ProductService],
     imports: [
         CommonModule, FormsModule, HttpModule,
         RouterModule.forChild([
-            {path: 'details/:prdId', component: ProductDetailsComponent}
+            {path: 'details/:prdId', component: ProductDetailsComponent},
+            {path: 'confirmcheckout', component: CheckoutConfirmation},
+            {path: 'confirm', component: InvoiceComponent}
         ])
     ]
 })

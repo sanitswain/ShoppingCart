@@ -5,7 +5,7 @@ import {LoginService} from '../service/login.service';
 
 @Component({
     template: `
-        <div class="well" style="width: 30%; margin-left: 10px;">
+        <div class="well" style="width: 30%; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%);">
             Username: <input type="text" [(ngModel)]="loginName" /> <br/><br/> 
             <button class="btn btn-sm btn-primary" (click)="onLogin()">Submit</button>
         </div>
