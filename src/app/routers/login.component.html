@@ -1,0 +1,18 @@
+<div class="well" style="width: 30%; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%);">
+    <table class="table table-striped">
+        <tr>
+            <th>Username</th>
+            <td><input type="text" [(ngModel)]="username" /></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input type="password" [(ngModel)]="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-sm btn-primary" (click)="onLogin()">Submit</button>
+                <button class="btn btn-sm btn-primary" (click)="gotoRegisterScreen()">Register</button>
+            </td>
+        </tr>
+    </table>
+</div>

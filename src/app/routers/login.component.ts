@@ -4,15 +4,11 @@ import {Location} from '@angular/common';
 import {LoginService} from '../service/login.service';
 
 @Component({
-    template: `
-        <div class="well" style="width: 30%; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%);">
-            Username: <input type="text" [(ngModel)]="loginName" /> <br/><br/> 
-            <button class="btn btn-sm btn-primary" (click)="onLogin()">Submit</button>
-        </div>
-    `
+    templateUrl: "./login.component.html"
 })
 export class LoginComponent{
-    loginName:string = null;
+    username:string = null;
+    password:string = null;
 
     constructor(private ls:LoginService, private router:Router, private location:Location){
 
@@ -26,8 +22,12 @@ export class LoginComponent{
     }*/
 
     onLogin(){
-        this.ls.emitLogin(this.loginName);
+        this.ls.emitLogin(this.username);
         //this.router.navigate(['/']);
         this.location.back();
+    }
+
+    gotoRegisterScreen(){
+        this.router.navigate(["/user-registration"]);
     }
 }
